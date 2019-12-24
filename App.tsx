@@ -8,7 +8,7 @@
  * @format
  */
 
-import React, {Fragment} from 'react';
+import React, { Fragment, useState } from 'react';
 import {
   SafeAreaView,
   StyleSheet,
@@ -16,6 +16,7 @@ import {
   View,
   Text,
   StatusBar,
+  TouchableOpacity,
 } from 'react-native';
 
 import {
@@ -26,49 +27,33 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
-const App = () => {
+// interface State {
+//   text: 'original Text'
+// }
+type Props = {
+  text: string
+}
+
+const App = (props: Props) => {
+  
+  const [cnt, setCnt] = useState(0)
+  const [text, setText] = useState('original text')
+  const [propState] = useState(props.text || 'default')
   return (
     <Fragment>
       <StatusBar barStyle="dark-content" />
       <SafeAreaView>
-        <ScrollView
-          contentInsetAdjustmentBehavior="automatic"
-          style={styles.scrollView}>
-          {/* <Header /> */}
-          {global.HermesInternal == null ? null : (
-            <View style={styles.engine}>
-              <Text style={styles.footer}>Engine: Hermes</Text>
-            </View>
-          )}
-          <View style={styles.body}>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Step One</Text>
-              <Text style={styles.sectionDescription}>
-                Edit <Text style={styles.highlight}>App.tsx</Text> to change this
-                screen and then come back to see your edits.
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>See Your Changes</Text>
-              <Text style={styles.sectionDescription}>
-                <ReloadInstructions />
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Debug</Text>
-              <Text style={styles.sectionDescription}>
-                <DebugInstructions />
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Learn More</Text>
-              <Text style={styles.sectionDescription}>
-                Read the docs to discover what to do next:
-              </Text>
-            </View>
-            <LearnMoreLinks />
-          </View>
-        </ScrollView>
+        <View style={styles.body}>
+          <Text>Jell's react-native test app.</Text>
+          <Text>Props: {propState}</Text>
+          <Text style={{
+            fontSize: 30,
+            color: 'blue'
+          }}>Hello this is {text}.</Text>
+          <TouchableOpacity onPress={() => { setText('Changed text!'); setCnt(cnt + 1) }}>
+            <Text style={{ fontSize: 20, color: 'red' }}>Change above text when onPressed! : {cnt}</Text>
+          </TouchableOpacity>
+        </View>
       </SafeAreaView>
     </Fragment>
   );
