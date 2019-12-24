@@ -83,7 +83,7 @@ const styles = StyleSheet.create({
     flex: 1
   },
   view1: {
-    height: 100,
+    flexBasis: 100,
     flexDirection: 'row'
   },
   view2: {
@@ -91,7 +91,7 @@ const styles = StyleSheet.create({
     flexGrow: 1
   },
   view3: {
-    height: 100,
+    flexBasis: 100,
     flexDirection: 'row'
   },
   box1: {
