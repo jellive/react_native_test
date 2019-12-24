@@ -34,7 +34,7 @@ type Props = {
   text: string
 }
 
-const App = (props: Props) => {
+const Exercise = (props: Props) => {
   const [cnt, setCnt] = useState(0)
   const [text, setText] = useState('original text')
   const [propState] = useState(props.text || 'default')
@@ -83,6 +83,7 @@ const styles = StyleSheet.create({
     flex: 1
   },
   view1: {
+    height: 100,
     flexDirection: 'row'
   },
   view2: {
@@ -90,20 +91,18 @@ const styles = StyleSheet.create({
     flexGrow: 1
   },
   view3: {
+    height: 100,
     flexDirection: 'row'
   },
   box1: {
-    height: 100,
     flexGrow: 1,
     backgroundColor: 'red'
   },
   box2: {
-    height: 100,
     flexGrow: 1,
     backgroundColor: 'blue'
   },
   box3: {
-    height: 100,
     flexGrow: 1,
     backgroundColor: 'green'
   },
@@ -121,20 +120,17 @@ const styles = StyleSheet.create({
     backgroundColor: 'orange'
   },
   box7: {
-    height: 100,
     flexGrow: 1,
     backgroundColor: 'green'
   },
   box8: {
-    height: 100,
     flexGrow: 1,
     backgroundColor: 'red'
   },
   box9: {
-    height: 100,
     flexGrow: 1,
     backgroundColor: 'purple'
   },
 });
 
-export default App;
+export default Exercise;
