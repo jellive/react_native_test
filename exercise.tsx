@@ -115,7 +115,6 @@ const styles = StyleSheet.create({
     backgroundColor: 'green'
   },
   box6: {
-    height: 100,
     flexGrow: 1,
     backgroundColor: 'orange'
   },
