@@ -10,6 +10,7 @@ type Props = {
     colors: Object,
     multiline: boolean,
     txt: string,
+    txtLabel: string,
     txtHint: string,
     placeholderTextColor: string,
     isPassword: boolean,
@@ -21,11 +22,11 @@ const Shared = (props: Props) => {
     return (
         <View style={[styles.wrapper, props.style]}>
             {
-                !!props.txt
+                !!props.txtLabel
                     ? <Text style={focused ? props.labelFocus : props.labelStyle}>
-                        {props.txt}
+                        {props.txtLabel}
                     </Text>
-                    : <View/>
+                : <View/>
             }
             <TextInput
                 style={[
@@ -110,9 +111,10 @@ const styles = StyleSheet.create({
 Shared.defaultProps = {
     style: styles.wrapper,
     labelStyle: styles.label,
-    labelStyleFocus: styles.labelFocus,
+    labelFocus: styles.labelFocus,
     multiline: false,
-    isPassword: false
+    isPassword: false,
+    txtLabel: ''
 }
 
 export default Shared

@@ -36,6 +36,7 @@ const Login = (props: Props) => {
                 <View style={styles.wrapperInput}>
                     <TextInput
                     style={{ marginTop: 60 }}
+                    txtLabel='this is label'
                     txt={email}
                     txtHint='Please write email address.'
                     placeholderTextColor={colors.blueGray}
