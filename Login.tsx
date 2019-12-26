@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Platform, StyleSheet, Text, TouchableOpacity, View, Image } from 'react-native'
 import TextInput from './TextInput'
+import Button from './Button'
 
 const colors = {
     background: '#e3e3e3',
@@ -16,6 +17,7 @@ type Props = {}
 const Login = (props: Props) => {
     const [ email, setEmail ] = useState('')
     const [ password, setPassword ] = useState('')
+    const [ isLoading, setIsLoading ] = useState(false)
     const onTextChanged = (type, text) => {
         switch(type) {
             case 'EMAIL':
@@ -54,6 +56,31 @@ const Login = (props: Props) => {
                     colors={colors}
                     multiline={false}
                     />
+                </View>
+                <View style={styles.viewBtnWrapper}>
+                    <Button
+                    containerStyle={{flex: 1}}
+                    onPress={() => {}}
+                    style={styles.btnSignUp}
+                    textStyle={styles.txtSignUp}
+                    >
+                        Sign Up
+                    </Button>
+                    <View style={{width: 8}}/>
+                    <Button
+                    containerStyle={{flex: 1}}
+                    isLoading={isLoading}
+                    onPress={() => {
+                        setIsLoading(true)
+                        setTimeout(() => {
+                            setIsLoading(false)
+                        }, 3000)
+                    }}
+                    style={styles.btnLogin}
+                    textStyle={styles.txtLogin}
+                    >
+                        Log in
+                    </Button>
                 </View>
                 <TouchableOpacity
                     style={styles.touchForgotPw}
@@ -113,6 +140,56 @@ const styles = StyleSheet.create({
         paddingHorizontal: 20,
         borderWidth: 1,
         borderColor: colors.paleGray
+    },
+    viewBtnWrapper: {
+        alignSelf: 'stretch',
+        marginTop: 20,
+        height: 60,
+
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center'
+    },
+    btnSignUp: {
+        backgroundColor: 'transparent',
+        borderRadius: 4,
+        borderWidth: 1,
+        height: '100%',
+        width: '100%',
+        borderColor: colors.dodgerBlue,
+        alignItems: 'center',
+        justifyContent: 'center',
+        // fontSize: 16,
+        // fontWeight: 'bold',
+        // color: colors.dodgerBlue
+    },
+    txtSignUp: {
+        fontSize: 16,
+        fontWeight: 'bold',
+        color: colors.dodgerBlue
+    },
+    btnLogin: {
+        backgroundColor: colors.dodgerBlue,
+        borderColor: colors.dodgerBlue,
+        borderRadius: 4,
+        borderWidth: 1,
+        height: 60,
+        shadowColor: colors.dodgerBlue,
+        shadowOffset: {
+            width: 0,
+            height: 10
+        },
+        shadowRadius: 4,
+        shadowOpacity: 0.3,
+
+        alignItems: 'center',
+        justifyContent: 'center'
+
+    },
+    txtLogin: {
+        fontSize: 16,
+        fontWeight: 'bold',
+        color: 'white'
     },
     touchForgotPw: {
         marginTop: 20
