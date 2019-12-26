@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
-import { Platform, StyleSheet, Text, TextInput, TouchableOpacity, View, Image } from 'react-native'
+import { Platform, StyleSheet, Text, TouchableOpacity, View, Image } from 'react-native'
+import TextInput from './TextInput'
 
 const colors = {
     background: '#e3e3e3',
@@ -33,24 +34,24 @@ const Login = (props: Props) => {
             </View>
             <View style={styles.wrapper}>
                 <View style={styles.wrapperInput}>
-                    <TextInput style={[
-                        styles.input,
-                        { marginTop: 60 }
-                    ]}
-                    value={email}
-                    placeholder='Please write email address.'
+                    <TextInput
+                    style={{ marginTop: 60 }}
+                    txt={email}
+                    txtHint='Please write email address.'
                     placeholderTextColor={colors.blueGray}
                     onChangeText={(text) => {onTextChanged('EMAIL', text)}}
+                    colors={colors}
+                    multiline={false}
                     />
-                    <TextInput style={[
-                        styles.input,
-                        { marginTop: 8 }
-                    ]}
-                    value={password}
-                    secureTextEntry
-                    placeholder='Please write password.'
+                    <TextInput 
+                    style={{ marginTop: 8 }}
+                    txt={password}
+                    isPassword={true}
+                    txtHint='Please write password.'
                     placeholderTextColor={colors.blueGray}
                     onChangeText={(text) => {onTextChanged('PASSWORD', text)}}
+                    colors={colors}
+                    multiline={false}
                     />
                 </View>
                 <TouchableOpacity
