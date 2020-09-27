@@ -3,7 +3,7 @@ import DrawerNavigator from './DrawerNavigator';
 import Intro from '../screen/Intro';
 import MaterialBottomTabNavigator from './MaterialBottomTabNavigator';
 import MaterialTopTabNavigator from './MaterialTopTabNavigator';
-import { NavigationNativeContainer } from '@react-navigation/native';
+import { NavigationContainer } from '@react-navigation/native';
 import React from 'react';
 import StackNavigator from './StackNavigator';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -14,7 +14,7 @@ const Stack = createNativeStackNavigator();
 function RootNavigator(): React.ReactElement {
   const { theme } = useThemeContext();
   return (
-    <NavigationNativeContainer>
+    <NavigationContainer>
       <Stack.Navigator
         screenOptions={{
           headerStyle: {
@@ -40,7 +40,7 @@ function RootNavigator(): React.ReactElement {
           component={MaterialBottomTabNavigator}
         />
       </Stack.Navigator>
-    </NavigationNativeContainer>
+    </NavigationContainer>
   );
 }
 

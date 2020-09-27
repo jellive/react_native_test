@@ -4,11 +4,13 @@
   "private": true,
   "scripts": {
     "start": "react-native start",
-    "test": "jest"
+    "test": "jest",
+    "build:ios": "react-native bundle --entry-file='index.js' --bundle-output='./ios/main.jsbundle' --dev=false --platform='ios'"
   },
   "dependencies": {
     "@react-native-community/async-storage": "^1.6.3",
     "@react-native-community/masked-view": "git+https://git@github.com/dulmandakh/react-native-masked-view.git#remove-android-support",
+    "@react-native-community/toolbar-android": "^0.1.0-rc.2",
     "@react-navigation/bottom-tabs": "^5.0.0-alpha.22",
     "@react-navigation/core": "^5.0.0-alpha.24",
     "@react-navigation/drawer": "^5.0.0-alpha.23",

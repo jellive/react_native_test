@@ -19,6 +19,7 @@
 		2DCD954D1E0B4F2C00145EB5 /* react_native_testTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* react_native_testTests.m */; };
 		80CC55C758E374EF4FFBA5DD /* libPods-react_native_test.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 750C0781A6683B4E9D540D9F /* libPods-react_native_test.a */; };
 		B3DCE9AE67D8D0E082F37A12 /* libPods-react_native_testTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D2EA7735E551846BCC1C4A74 /* libPods-react_native_testTests.a */; };
+		D69FB5752520649300CEACFB /* main.jsbundle in Resources */ = {isa = PBXBuildFile; fileRef = 008F07F21AC5B25A0029DE68 /* main.jsbundle */; };
 		EC17571341960C6DB0D99189 /* libPods-react_native_test-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1598582CE74DBE51CA1F0CF0 /* libPods-react_native_test-tvOSTests.a */; };
 /* End PBXBuildFile section */
 
@@ -341,6 +342,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D69FB5752520649300CEACFB /* main.jsbundle in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
 			);
