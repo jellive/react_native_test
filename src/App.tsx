@@ -1,9 +1,9 @@
 import React from 'react';
 import RootNavigator from './components/navigation/SwitchNavigator';
 import RootProvider from './providers';
-import { useScreens } from 'react-native-screens';
+import {enableScreens} from 'react-native-screens';
 
-useScreens();
+enableScreens();
 
 function App(): React.ReactElement {
   return <RootNavigator />;
