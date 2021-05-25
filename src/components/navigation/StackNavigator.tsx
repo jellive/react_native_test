@@ -1,9 +1,9 @@
-import React, { ReactElement } from 'react';
+import React, {ReactElement} from 'react';
 
 import Button from '../shared/Button';
-import { DefaultNavigationProps } from '../../types';
+import {DefaultNavigationProps} from '../../types';
 import styled from 'styled-components/native';
-import { useNavigation } from '@react-navigation/core';
+import {useNavigation} from '@react-navigation/core';
 
 const Container = styled.View`
   flex: 1;
@@ -21,7 +21,7 @@ const StyledText = styled.Text`
 `;
 
 interface Props {
-  navigation: DefaultNavigationProps<'default'>;
+  // navigation: DefaultNavigationProps<'default'>;
 }
 
 function Page(): ReactElement {

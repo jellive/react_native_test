@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import {
   StyleSheet,
   TouchableOpacity,
@@ -8,7 +8,7 @@ import {
   Button,
 } from 'react-native';
 
-import { ratio, colors } from '../../utils/Styles';
+import {ratio, colors} from '../../utils/Styles';
 
 const styles = StyleSheet.create({
   container: {
@@ -28,12 +28,8 @@ const styles = StyleSheet.create({
   },
 });
 
-type Props = {
-
-};
-type State = {
-
-}
+type Props = {};
+type State = {};
 
 class Screen extends Component<Props, State> {
   render() {
@@ -42,16 +38,13 @@ class Screen extends Component<Props, State> {
         <Text style={styles.txt}>Screen 1</Text>
         <Button
           onPress={() => this.props.navigation.navigate('Screen2')}
-          title='Navigate'
+          title="Navigate"
         />
-        {
-          this.props.navigation.getParam('isDrawer')
-            ? <TouchableOpacity
-              onPress={() => this.props.navigation.openDrawer()}
-            ><Text style={styles.txtDrawer}>Open Drawer</Text>
-            </TouchableOpacity>
-            : null
-        }
+        {this.props.navigation.getParam('isDrawer') ? (
+          <TouchableOpacity onPress={() => this.props.navigation.openDrawer()}>
+            <Text style={styles.txtDrawer}>Open Drawer</Text>
+          </TouchableOpacity>
+        ) : null}
       </View>
     );
   }
